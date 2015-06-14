@@ -1,0 +1,54 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>A simple Angular JS Sticky Notes App</title>
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/popup.css" />
+</head>
+
+<body ng-app="sticky" ng-controller="mainCtrl">
+		<!-- Pop up -->
+<div id="Popup" ng-show="popup">
+	 <div class="close" ng-click="popup = false"></div>
+	 <span class="popup_tooltip tooltipd" ng-show="tooltip">Press Esc to close <span class="arrow"></span></span>
+	 <div id="popup_content">
+	 	<div class="form-group">
+	 		<input type="text" class="form-control" id="title" ng-model="title" placeholder="Title for note" />
+	 	</div>
+	 	<div class="form-group">
+	 		<textarea name="" id="notetext" cols="30" rows="3" class="form-control" ng-model="titletext" placeholder="Text for Note..">
+	 		</textarea>
+	 	</div>
+	 	<button class="btn btn-success" ng-click="addnote()">Add Note</button>
+	 </div>
+</div>
+ 
+ <div class="loader" ng-show="loader"></div>
+ <div id="backgroundPopup"></div>
+<!-- End Pop up -->
+	<div class="addnewbutton">
+		<button class="btn btn-info pull-left" id="addnewbutton" ng-click="addNew()">Add New Note
+		</button>
+	</div>
+	<div class="container" id="container" >
+		<div class="notelist" ng-repeat="note in listofnotes">
+			<div class="notetitle">
+				<span>{{ note.title }}</span>
+				<span class="pull-right del" ng-click="deletenote(note.id)"> x </span>
+			</div>
+			<div class="notetext">
+				<p class="nottext">
+					{{  note.text }}
+				</p>
+			</div>
+			
+		</div>
+		
+	</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

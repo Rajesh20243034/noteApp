@@ -1,0 +1,36 @@
+#container {
+	max-width:300px;
+	float:left;
+	background-color:gray;
+	margin:10px 30%;
+	padding:0;
+	div.notelist{
+		width:100%;
+		padding:5px;
+		background-color:lightgray;
+		border-top:1px solid darkgray;
+		border-bottom:1px solid darkgray;
+		color:#110606;
+		div.notetitle {
+			font-weight:bold;
+			font-style:italic;
+			font-size:15px;
+		}
+		div.notetext {
+		font-style:italic;
+		font-size:13px;
+		color:darkred;
+		}
+	}
+
+
+}
+#addnewbutton{
+	margin-left:30%;
+	margin-top:4%;
+	float:left;
+
+}
+.del {
+	cursor:pointer;
+}
